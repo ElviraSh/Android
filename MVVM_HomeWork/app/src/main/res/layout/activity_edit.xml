@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<layout>
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.elvira.mvvm_homework.User"/>
+        <variable
+            name="viewModel"
+            type="com.example.elvira.mvvm_homework.EditViewModel"/>
+
+
+    </data>
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="7dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="4dp"
+
+        >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="100dp"
+        tools:context="com.example.elvira.mvvm_homework.Edit">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.surname}"
+            android:hint="Surname"
+
+             />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.name}"
+            android:hint="Name"
+
+  />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={viewModel.email}"
+            android:hint="email"
+         />
+
+        <Button
+            android:id="@+id/changeButton"
+            android:text="Change"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:onClick="@{(v)->viewModel.click()}"
+            />
+
+
+
+    </LinearLayout>
+</android.support.v7.widget.CardView>
+
+</layout>
